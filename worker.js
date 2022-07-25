@@ -1,4 +1,4 @@
-const githubAuthUrl = 'https://github.com/login/oauth/authorize?client_id=e4be34a79e43b4752209&redirect_uri=https://api.cfd/auth/callback&scope=read:user user:email&state=
+const githubAuthUrl = 'https://github.com/login/oauth/authorize?client_id=e4be34a79e43b4752209&redirect_uri=https://api.cfd/auth/callback&scope=read:user user:email&state='
 
 
 export default {
