@@ -9,11 +9,11 @@ export default {
       authorization: req.headers.get('authorization')
     }
     
-    if(!headers.authorization) {
-      const state = Crypto.randomUUID()
-      ctx.waitUntil(env.USERS.set(state, req.cf, { type: 'json', expirationTtl: 600 }))
-      return Response.redirect(githubAuthUrl + state, 302)
-    }
+//     if(!headers.authorization) {
+//       const state = Crypto.randomUUID()
+//       ctx.waitUntil(env.USERS.set(state, req.cf, { type: 'json', expirationTtl: 600 }))
+//       return Response.redirect(githubAuthUrl + state, 302)
+//     }
     
     return new Response(JSON.stringify({matches}, null, 2))
   }
