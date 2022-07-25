@@ -3,7 +3,7 @@ const githubAuthUrl = 'https://github.com/login/oauth/authorize?client_id=e4be34
 
 export default {
   fetch: async (req, env, ctx) => {
-    const { pathname } = new URLPattern({pathname: '/foo/:image.jpg'}).exec(new URL(req.url))
+    const matches = new URLPattern({pathname: '/foo/:image.jpg'}).exec(new URL(req.url))
     
     const headers = {
       authorization: req.headers.get('authorization')
@@ -15,6 +15,6 @@ export default {
       return Response.redirect(githubAuthUrl + state, 302)
     }
     
-    return new Response(JSON.stringify({pathname}, null, 2))
+    return new Response(JSON.stringify({matches}, null, 2))
   }
 }
